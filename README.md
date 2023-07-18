@@ -5,7 +5,7 @@ SaturnDB is a cross-platform dynamic library that allows you to create and work 
 ## Features
 
 - Easy to use: SaturnDB provides a simple and intuitive interface for creating, reading, updating, and deleting data in the file-based database.
-- Cross-platform compatibility: SaturnDB is designed to work seamlessly on multiple platforms, including Windows, macOS, and Linux.
+- Cross-platform compatibility: SaturnDB is designed to work seamlessly on multiple platforms, including macOS, and Linux.
 - Efficient data storage: The file-based nature of SaturnDB ensures efficient storage and retrieval of data, making it suitable for small to medium-sized databases.
 
 ## Getting Started
