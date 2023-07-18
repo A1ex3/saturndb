@@ -1,0 +1,32 @@
+{
+    "files.associations": {
+        "sha.h": "c",
+        "strings.h": "c",
+        "unity.h": "c",
+        "string.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "array": "c",
+        "functional": "c",
+        "istream": "c",
+        "ostream": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "operations.h": "c",
+        "stdint.h": "c",
+        "evp.h": "c",
+        "murmur3.h": "c",
+        "time.h": "c",
+        "stdbool.h": "c",
+        "hashtable.h": "c",
+        "sstream": "c",
+        "vector": "c",
+        "memory": "c",
+        "optional": "c",
+        "string_view": "c",
+        "string": "c",
+        "system_error": "c",
+        "pthread.h": "c"
+    }
+}
