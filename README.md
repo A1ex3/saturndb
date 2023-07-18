@@ -78,4 +78,4 @@ We welcome contributions to SaturnDB! If you encounter any issues, have suggesti
 
 ## License
 
-SaturnDB is released under the [MIT License](https://github.com/saturndb/LICENSE). Feel free to use, modify, and distribute it according to the terms of the license.
+SaturnDB is released under the [MIT License](https://github.com/A1ex3/saturndb/blob/master/LICENSE). Feel free to use, modify, and distribute it according to the terms of the license.
