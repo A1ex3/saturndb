@@ -61,7 +61,7 @@ Deletes data from the table
 - `0`: key has been removed from the table.
 - `MISSING_PARAMETERS`: if no parameters are specified.
 
-### `TableDel(char t_hash[],char key[])`
+### `TableDel(char t_hash[])`
 
 Deletes the entire table
 
