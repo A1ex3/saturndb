@@ -3,7 +3,6 @@ SRC_DIR = ./src
 LIB_NAME = saturndb
 BUILD_DIR = ./build
 
-# Определение операционной системы
 ifeq ($(OS),Windows_NT)
 	# Для Windows
 	CFLAGS = -O3
@@ -14,7 +13,6 @@ else
 	LIB_EXT = .o
 endif
 
-# Проверка и создание папки build, если она не существует
 create_build_dir:
 ifeq ($(OS),Windows_NT)
 	if not exist $(BUILD_DIR) mkdir $(BUILD_DIR)
