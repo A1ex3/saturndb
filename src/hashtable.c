@@ -1,7 +1,5 @@
 #include "hashtable.h"
 
-pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-
 int hash(char* key) {
     int hash = 0;
     for (int i = 0; i < strlen(key); i++) {
@@ -11,14 +9,12 @@ int hash(char* key) {
 }
 
 void AddKeyValuePair(HashTable* table, char* key, char* value) {
-    pthread_mutex_lock(&mutex);
 
     int index = hash(key);
 
     while (table->table[index].key[0] != '\0') {
         if (strcmp(table->table[index].key, key) == 0) {
             strcpy(table->table[index].value, value);
-            pthread_mutex_unlock(&mutex);
             return;
         }
         index = (index + 1) % TABLE_SIZE;
@@ -27,26 +23,21 @@ void AddKeyValuePair(HashTable* table, char* key, char* value) {
     strcpy(table->table[index].key, key);
     strcpy(table->table[index].value, value);
 
-    pthread_mutex_unlock(&mutex);
 }
 
 char* FindValueByKey(HashTable* table, char* key) {
-    pthread_mutex_lock(&mutex);
     int index = hash(key);
 
     while (table->table[index].key[0] != '\0') {
         if (strcmp(table->table[index].key, key) == 0) {
-            pthread_mutex_unlock(&mutex);
             return table->table[index].value;
         }
         index = (index + 1) % TABLE_SIZE;
     }
-    pthread_mutex_unlock(&mutex);
     return NULL;
 }
 
 void RemoveKeyValuePair(HashTable* table, char* key) {
-    pthread_mutex_lock(&mutex);
     int index = hash(key);
     int startIndex = index;
 
@@ -68,40 +59,32 @@ void RemoveKeyValuePair(HashTable* table, char* key) {
                 }
                 nextIndex = (nextIndex + 1) % TABLE_SIZE;
             }
-            pthread_mutex_unlock(&mutex);
             return;
         }
         index = (index + 1) % TABLE_SIZE;
 
         if (index == startIndex) {
-            pthread_mutex_unlock(&mutex);
             return;
         }
     }
 }
 
 void WriteHashTableToFile(HashTable* table, const char* filename) {
-    pthread_mutex_lock(&mutex);
     FILE* file = fopen(filename, "wb");
     if (file == NULL) {
-        pthread_mutex_unlock(&mutex);
         return;
     }
 
     fwrite(table, sizeof(HashTable), 1, file);
     fclose(file);
-    pthread_mutex_unlock(&mutex);
 }
 
 void ReadHashTableFromFile(HashTable* table, const char* filename) {
-    pthread_mutex_lock(&mutex);
     FILE* file = fopen(filename, "rb");
     if (file == NULL) {
-        pthread_mutex_unlock(&mutex);
         return;
     }
 
     fread(table, sizeof(HashTable), 1, file);
     fclose(file);
-    pthread_mutex_unlock(&mutex);
 }

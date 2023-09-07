@@ -5,7 +5,7 @@ SaturnDB is a cross-platform dynamic library that allows you to create and work 
 ## Features
 
 - Easy to use: SaturnDB provides a simple and intuitive interface for creating, reading, updating, and deleting data in the file-based database.
-- Cross-platform compatibility: SaturnDB is designed to work seamlessly on multiple platforms, including macOS, and Linux.
+- Cross-platform compatibility: SaturnDB is designed to work seamlessly on multiple platforms, including macOS, linux and windows.
 - Efficient data storage: The file-based nature of SaturnDB ensures efficient storage and retrieval of data, making it suitable for small to medium-sized databases.
 
 ## Getting Started
@@ -18,6 +18,7 @@ To get started with SaturnDB, follow the steps below:
 4. Build and run your application, leveraging the power and simplicity of SaturnDB.
 
 ## Methods
+
 ```c
 typedef enum
 {
@@ -27,7 +28,9 @@ typedef enum
     MISSING_PARAMETERS = -4,
     DELETION_ERROR = -5,
 }FILE_ERROR;
+
 ```
+
 #### Parameters
 
 - `t_hash` (string): file whose name is hashed.
@@ -74,7 +77,6 @@ Deletes the entire table
 ## Contributing
 
 We welcome contributions to SaturnDB! If you encounter any issues, have suggestions, or would like to contribute enhancements, please feel free to submit a pull request or open an issue on the [GitHub repository](https://github.com/A1ex3/saturndb).
-
 
 ## License
 

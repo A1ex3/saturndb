@@ -1,7 +1,5 @@
 #pragma once
 
-#include <pthread.h>
-
 #include "strings.h"
 
 #define TABLE_SIZE 999

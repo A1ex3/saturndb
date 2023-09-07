@@ -1,6 +1,6 @@
 from ctypes import *
 
-Objdl = cdll.LoadLibrary('./saturndb.so')
+Objdl = cdll.LoadLibrary('../saturndb.dll')# *.o or *.dll
 
 table = "1"
 key="123"
