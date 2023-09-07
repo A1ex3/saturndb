@@ -4,11 +4,9 @@ LIB_NAME = saturndb
 BUILD_DIR = ./build
 
 ifeq ($(OS),Windows_NT)
-	# Для Windows
 	CFLAGS = -O3
 	LIB_EXT = .dll
 else
-	# Для Linux и других ОС
 	CFLAGS = -Wall -Werror -fpic
 	LIB_EXT = .o
 endif
